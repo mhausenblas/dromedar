@@ -24,7 +24,9 @@ TBD
 
 ## To Do
 
-- [ ] Bootstrap (install Drill, launch Dromedar via Marathon)
+- [x] Bootstrap (install Drill, launch Dromedar via Marathon)
+- [ ] Worker deployment
+- [ ] HAProxy?
 - [ ] QSF implementation
 - [ ] Playa test
 - [ ] Cluster test
