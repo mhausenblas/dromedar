@@ -13,6 +13,6 @@
 
 set -e # exit on error immediately
 
-/opt/drill/bin/drillbit.sh start
+sudo /opt/drill/apache-drill-0.8.0/bin/drillbit.sh start
 
 exit 0
