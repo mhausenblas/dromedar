@@ -8,8 +8,8 @@ Dromedar (DRill On MEsos aDAptoR) gets launched via [Marathon](https://github.co
 ## Dependencies
 
 * Apache [Drill 0.8.0](http://getdrill.org/drill/download/apache-drill-0.8.0.tar.gz)
-* Apache [Mesos 0.22.x](http://archive.apache.org/dist/mesos/0.22.0/)
-* [Marathon 0.8.1](https://github.com/mesosphere/marathon/releases/tag/v0.8.1)
+* Apache [Mesos 0.22.x](http://archive.apache.org/dist/mesos/0.22.0/mesos-0.22.0.tar.gz)
+* [Marathon 0.8.1](https://downloads.mesosphere.io/marathon/v0.8.1/marathon-0.8.1.tgz)
 * [marathon-python](https://github.com/thefactory/marathon-python)
 
 ## Usage
