@@ -40,8 +40,8 @@ else:
 
 QSF_DEFAULT = 100  # 1 Drillbit per 100MB dataset size
 
-def launch_drillbits(marathon_url):
-    logging.info('Launching Drillbits using %s' %(marathon_url))
+def launch_drillbits(marathon_url, scale_factor):
+    logging.info('Launching Drillbits using %s and scale factor %d' %(marathon_url, int(scale_factor)))
 
     # launch via Marathon REST API
     c = MarathonClient(marathon)
@@ -55,7 +55,11 @@ def launch_drillbits(marathon_url):
 if __name__ == '__main__':
     try:
         marathon_url = sys.argv[1] # Marathon URL to use
-        launch_drillbits(marathon_url)
+        try:
+            scale_factor = sys.argv[2]
+        except:
+            scale_factor = QSF_DEFAULT
+        launch_drillbits(marathon_url, scale_factor)
     except Exception, e:
         print(e)
         print(__doc__)

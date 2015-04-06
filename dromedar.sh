@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###############################################################################
-# Drill on Mesos (Dromeda) launch script.
+# Drill on Mesos (Dromeda) provision and init script.
 #
 # Usage:
 #
