@@ -44,7 +44,7 @@ def launch_drillbits(marathon_url, scale_factor):
     logging.info('Launching Drillbits using %s and scale factor %d' %(marathon_url, int(scale_factor)))
 
     # launch via Marathon REST API
-    c = MarathonClient(marathon)
+    c = MarathonClient(marathon_url)
     c.create_app('drill', MarathonApp(cmd='launch-drillbit.sh', mem=200, cpus=1))
     
     print('Drillbits are deployed: DATASETSIZE, NUM_DRILLBITS')
