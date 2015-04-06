@@ -16,4 +16,16 @@ Dromedar (DRill On MEsos aDAptoR) gets launched via [Marathon](https://github.co
 
 ### Install
 
+TBD
+
 ### Run
+
+TBD
+
+## To Do
+
+- [ ] Bootstrap (install Drill, launch Dromedar via Marathon)
+- [ ] QSF implementation
+- [ ] Playa test
+- [ ] Cluster test
+- [ ] Doc, examples, video
