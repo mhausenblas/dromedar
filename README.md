@@ -7,16 +7,16 @@ Dromedar (DRill On MEsos aDAptoR) gets launched via [Marathon](https://github.co
 Dromedar's architecture is as follows:
 
     +----------------+ +----------------------------------------+                     
-    | Marathon       | |  Mesos Worker node                     |                     
+    | Marathon       | |  Mesos worker node                     |                     
     |                | |                                        |                     
     |                | |       +-------------------------+      |                     
     |                | |       |                         |      |                     
-    |                | |       |        Drillbit         <---------[4]-------> SQL client
+    |                | |       |        Drillbit         <---------[3]-------> SQL client
     |                | |       +------------+------------+      |                     
-    |                | |                   [3]                  |                     
+    |                | |                   [2]                  |                     
     |                | |       +------------+------------+      |                     
     |                | |       |                         |      |                     
-    |                +----[3]-->   launch-drillbit.sh    |      |                     
+    |                +----[2]-->    drillbit.sh start    |      |                     
     |                | |       +-------------------------+      |                     
     |                | |                                        |                     
     |                | |                                        |                     
@@ -28,12 +28,11 @@ Dromedar's architecture is as follows:
     |                | |       +-------------------------+      |                     
     +----------------+ +----------------------------------------+                     
 
-Dromedar's underlying long-runing service is `qsf.py` is (which is initially deployed, using Marathon):
+Dromedar's underlying long-runing service is `qsf.py` which itself is initially deployed through `dromedar.py`, using Marathon. Once `qsf.py` is running as a Web service it performs the following steps:
 
-1. As an input it takes a QSF (and the URL for Marathon)
-1. It uses the Marathon [HTTP API](https://mesosphere.github.io/marathon/docs/rest-api.html) to trigger on-demand Drillbits creation
-1. Marathon deploys, triggered by a `qsf.py` request, an instance of `launch-drillbit.sh` which in turn launches 1 or more Drillbits
-1. The SQL client connects to a Drillbit and executes a query
+1. As an input it takes a QSF via its HTTP interface on port `9876`.
+1. It uses the Marathon [HTTP API](https://mesosphere.github.io/marathon/docs/rest-api.html) to trigger on-demand Drillbits creation using the `drillbit.sh start` command.
+1. The SQL client connects to (one of) the Drillbit(s) and executes the SQL query.
 
 ## Dependencies
 
