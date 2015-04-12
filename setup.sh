@@ -31,7 +31,7 @@ if ! $(python -c 'import marathon' &> /dev/null); then
 fi
 
 # Launch Dromedar from edge node
-./dromedar.py
+./dromedar.py http://localhost:8080
 
 echo Done. Now you can start using Dromedar via qsf.py ...
 

@@ -43,7 +43,7 @@ def launch_qsf(marathon_url):
 
     # launch via Marathon REST API
     c = MarathonClient(marathon_url)
-    c.create_app('dromedar-qsf', MarathonApp(cmd='qsf.py', mem=100, cpus=1))
+    c.create_app('dromedar-qsf', MarathonApp(cmd='qsf.py', mem=100, cpus=.5))
     
     logging.info('QSF up and running.')
     
