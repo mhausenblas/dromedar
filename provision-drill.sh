@@ -27,10 +27,4 @@ sudo mkdir -p /opt/drill
 sudo tar -xvzf apache-drill-0.8.0.tar.gz -C /opt/drill
 rm apache-drill-0.8.0.tar.gz
 
-# Install marathon-python
-wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
-sudo python get-pip.py
-sudo pip install marathon
-rm -f get-pip.py
-
 exit 0
