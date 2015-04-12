@@ -48,8 +48,10 @@ def launch_drillbits(marathon_url, scale_factor):
 
     # launch Drillbits via Marathon REST API
     c = MarathonClient(marathon_url)
-    c.create_app('dromedar-drill', MarathonApp(cmd='dromedar-master/launch-drillbit.sh', uris=['https://github.com/mhausenblas/dromedar/archive/master.zip'], mem=400, cpus=1))
+    # c.create_app('dromedar-drill', MarathonApp(cmd='dromedar-master/launch-drillbit.sh', uris=['https://github.com/mhausenblas/dromedar/archive/master.zip'], mem=400, cpus=1))
     
+    c.create_app('dromedar-drill', MarathonApp(cmd='sudo /opt/drill/apache-drill-0.8.0/bin/drillbit.sh start', mem=400, cpus=1))
+
     print('Drillbits are deployed: DATASETSIZE, NUM_DRILLBITS')
     
     httpd = SocketServer.TCPServer(("", QSF_PORT), SimpleHTTPServer.SimpleHTTPRequestHandler)
