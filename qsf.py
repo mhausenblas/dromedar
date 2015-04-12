@@ -45,7 +45,7 @@ def launch_drillbits(marathon_url, scale_factor):
 
     # launch via Marathon REST API
     c = MarathonClient(marathon_url)
-    c.create_app('dromedar-drill', MarathonApp(cmd='launch-drillbit.sh', mem=400, cpus=1))
+    c.create_app('dromedar-drill', MarathonApp(cmd='dromedar-master/launch-drillbit.sh', uris=['https://github.com/mhausenblas/dromedar/archive/master.zip'] mem=400, cpus=1))
     
     print('Drillbits are deployed: DATASETSIZE, NUM_DRILLBITS')
     
