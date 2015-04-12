@@ -1,12 +1,12 @@
 #!/bin/bash
 
 ###############################################################################
-# The Dromedar setup script. Is used on an edge node (your laptop, etc.) to
-# install the local and remote parts of Dromedar (using Marathon).
+# The Dromedar launch script. It is used on an edge node such as your laptop
+# to install the local dependencies and launch Dromedar (using Marathon).
 #
 # Usage:
 #
-#  ./setup.sh
+#  ./launch.sh
 #
 # Author: Michael Hausenblas
 # Init: 2015-04-12
@@ -33,6 +33,6 @@ fi
 # Launch Dromedar from edge node
 ./dromedar.py http://localhost:8080
 
-echo Done. Now you can start using Dromedar via qsf.py ...
+echo Done launching Dromedar. Now you can start using Apache Drill via qsf.py ...
 
 exit 0
