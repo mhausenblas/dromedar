@@ -55,8 +55,10 @@ Then, go to the Marathon UI where you should see something like the following:
 ## To Do
 
 - [x] Bootstrap (install Drill, launch Dromedar via Marathon)
+- [ ] Implement QSF HTTP API
+- [ ] Implement Drillbit launch/teardown based on requests
+- [ ] Clarify relation/communication between QSF and SQL client (out of band??)
 - [ ] Strata implementation cross-check
-- [ ] Playa testing
-- [ ] Cluster testing
+- [ ] Cluster deployment and testing
 - [ ] HAProxy deployment?
-- [ ] Doc, examples, video
+- [ ] Examples and video walkthrough
